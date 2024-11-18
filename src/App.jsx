@@ -3,12 +3,28 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+const todoList = [
+  {
+    id: 1,
+    title: "complete assignemt"
+
+  },
+  {
+    id: 2,
+    title: "update my resume"
+  },
+  {
+    id: 3,
+    title: "feed the cats"
+  }
+];
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,7 +43,14 @@ function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
+
+      <h1>Todo List</h1>
+      <ul>
+        {todoList.map(function(item){
+          return <li key={item.id}>{item.title}</li>
+        })}
+      </ul>
     </>
   )
 }
