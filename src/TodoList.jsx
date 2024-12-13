@@ -18,16 +18,13 @@ const todoList = [
   ];
 
   
-function TodoList () {
-
+  function TodoList({ todoList }) {
     return (
-        
         <ul>
-          {/* My todoList comes from the list above */}
-        {todoList.map(function(item){
-          return <TodoListItem key={item.id} todo={item}/>
-        })}
-      </ul>
+            {todoList.map(item => (
+                <TodoListItem key={item.id} todo={item} />
+            ))}
+        </ul>
         
     )
 }
