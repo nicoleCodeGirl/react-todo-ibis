@@ -1,23 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import TodoList from './TodoList'
 import AddTodoForm from './AddTodoForm'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todoList, setTodoList] = useState([]); // State to manage the list of todos
 
-  const [newTodo,setNewTodo] = useState('');
+  // Function to add a new todo to the list
+  function addTodo(newTodo) {
+    setTodoList([...todoList, newTodo]); // Spread operator to add the newTodo object to the existing todoList
+  }
 
   return (
     <>
       <h1>Todo List</h1>
-      <AddTodoForm onAddTodo={setNewTodo}/>
-      <p>{newTodo}</p>
-      <TodoList/>
+      {/* Updated the onAddTodo prop to use the addTodo function */}
+      <AddTodoForm onAddTodo={addTodo} />
+      {/* Removed the newTodo JSX element */}
+      <TodoList todoList={todoList} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
