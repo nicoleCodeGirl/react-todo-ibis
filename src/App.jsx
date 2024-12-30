@@ -1,22 +1,34 @@
-import { useState } from 'react'
-import './App.css'
-import TodoList from './TodoList'
-import AddTodoForm from './AddTodoForm'
+import { useState, useEffect } from 'react'; // Importing useEffect
+import './App.css';
+import TodoList from './TodoList';
+import AddTodoForm from './AddTodoForm';
+
+function useSemiPersistentState () {
+  const [todoList, setTodoList] = useState(() => {
+    const saved = localStorage.getItem('savedTodoList');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('savedTodoList', JSON.stringify(todoList));
+  }, [todoList]);
+
+  return [todoList, setTodoList];
+}
 
 function App() {
-  const [todoList, setTodoList] = useState([]); // State to manage the list of todos
 
-  // Function to add a new todo to the list
+  const [todoList, setTodoList] = useSemiPersistentState();
+  
   function addTodo(newTodo) {
-    setTodoList([...todoList, newTodo]); // Spread operator to add the newTodo object to the existing todoList
+    setTodoList([...todoList, newTodo]);
   }
 
   return (
     <>
       <h1>Todo List</h1>
-      {/* Updated the onAddTodo prop to use the addTodo function */}
+
       <AddTodoForm onAddTodo={addTodo} />
-      {/* Removed the newTodo JSX element */}
       <TodoList todoList={todoList} />
     </>
   );
