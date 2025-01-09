@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import InputWithLabel from './InputWithLabel';
 
 function AddTodoForm({onAddTodo}) {
 
@@ -14,9 +15,6 @@ function AddTodoForm({onAddTodo}) {
 
         console.log("this is todoTitle:", todoTitle);
 
-        // Removed the event.target.reset() call as instructed
-
-        // Updated the onAddTodo callback to pass an object with title and id
         onAddTodo({ 
             title: todoTitle, // Set title to todoTitle
             id: Date.now() // Generate a unique identifier using Date.now()
@@ -27,13 +25,11 @@ function AddTodoForm({onAddTodo}) {
 
     return (
         <form onSubmit={handleAddTodo}>
-            <label htmlFor="todoTitle">Title</label>
-            <input
-                id="todoTitle"
-                name="title"
-                value={todoTitle} // Controlled input value
-                onChange={handleTitleChange} // onChange prop to be defined next
-            />
+           <InputWithLabel 
+                todoTitle={todoTitle} 
+                handleTitleChange={handleTitleChange}>
+                Title
+            </InputWithLabel>
             <button type="submit">Add</button>
         </form>
     );
