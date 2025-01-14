@@ -1,12 +1,13 @@
-function TodoListItem ({todo}) {
-   
+function TodoListItem({ todo, onRemoveTodo }) {
     return (
-       
-        <li>{todo.title}</li>
-      
-    )
-
-    
-}
-
-export default TodoListItem;
+      <li>
+        {todo.title}
+        <button type="button" onClick={() => onRemoveTodo(todo.id)}>
+          Remove
+        </button>
+      </li>
+    );
+  }
+  
+  export default TodoListItem;
+  
