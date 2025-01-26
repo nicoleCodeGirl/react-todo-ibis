@@ -1,14 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 
-const InputWithLabel = (props) => {
-    const { todoTitle, handleTitleChange, children } = props;
-
-    // Create an imperative ref named inputRef
+const InputWithLabel = ({ todoTitle, handleTitleChange, children }) => {
+   
     const inputRef = useRef();
 
-    // Define a useEffect without a dependency list
     useEffect(() => {
-        // Call the focus() method on the current inputRef
         inputRef.current.focus();
     });
 
@@ -20,7 +16,7 @@ const InputWithLabel = (props) => {
                 name="title"
                 value={todoTitle}
                 onChange={handleTitleChange}
-                ref={inputRef} // Add the ref prop
+                ref={inputRef}
             />
         </>
     );
