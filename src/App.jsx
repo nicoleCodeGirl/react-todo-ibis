@@ -4,22 +4,22 @@ import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
 
 function App() {
-  const [todoList, setTodoList] = useState([]); // Default state is an empty array
+  const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     new Promise((resolve, reject) => {
       setTimeout(() => {
-        // Resolving with an object containing 'data' and 'todoList'
-        resolve({ data: { todoList: [] } }); // Set todoList as an empty array here
-      }, 2000); // 2-second delay
+        const saved = localStorage.getItem('savedTodoList');
+        resolve({ data: { todoList: () => {
+          return saved ? JSON.parse(saved) : [];
+        } } }); 
+      }, 2000); 
     })
       .then(result => {
-        // After the Promise resolves, update the todoList with the todoList from the result object
         setTodoList(result.data.todoList);
       })
       .then(() => {
-        // After updating the state, stop the loading spinner
         setIsLoading(false);
       });
   }, []);
