@@ -11,10 +11,11 @@ function App() {
     new Promise((resolve, reject) => {
       setTimeout(() => {
         const saved = localStorage.getItem('savedTodoList');
-        resolve({ data: { todoList: () => {
-          return saved ? JSON.parse(saved) : [];
-        } } }); 
-      }, 2000); 
+        resolve({
+          data: {
+            todoList: saved ? JSON.parse(saved) : []}
+        });
+      }, 2000);
     })
       .then(result => {
         setTodoList(result.data.todoList);
