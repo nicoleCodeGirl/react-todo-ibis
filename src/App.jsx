@@ -28,7 +28,7 @@ function App() {
       console.log(data);  // Print the data variable to observe the API response
 
       const todos = data.records.map(record => ({
-        title: record.fields.Title,
+        title: record.fields.title,
         id: record.id
       }));
 
@@ -44,7 +44,7 @@ function App() {
       method: 'POST',
       headers,
       body: JSON.stringify({
-        records: [{ fields: { Title: newTodo.Title } }]
+        records: [{ fields: { title: newTodo.title } }]
       })
     };
 
@@ -58,7 +58,7 @@ function App() {
       console.log(data);  // Print the data variable to observe the API response
 
       const addedTodo = {
-        title: data.records[0].fields.Title,
+        title: data.records[0].fields.title,
         id: data.records[0].id
       };
 
@@ -67,12 +67,6 @@ function App() {
       console.error("Error adding todo:", error);
     }
   }
-
-  // function removeTodo(id) {
-  //   const updatedTodoList = todoList.filter(todo => todo.id !== id);
-  //   setTodoList(updatedTodoList);
-  //   localStorage.setItem('savedTodoList', JSON.stringify(updatedTodoList)); // Save updated list
-  // }
 
   async function removeTodo(id) {
     const options = {
