@@ -1,0 +1,10 @@
+.TodoList {
+    background-color: #ffdde1; /* Light pink */
+    padding: 20px; /* Adds spacing inside */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for contrast */
+    width: 80%; /* Adjust width to fit nicely */
+    max-width: 500px; /* Prevents it from becoming too wide */
+    margin: 20px auto; /* Centers it horizontally */
+  }
+  

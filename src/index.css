@@ -29,18 +29,31 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+.todoBox{
+  background: rgb(238, 6, 172);
+  padding: 10px;
+}
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 
-  /* Rainbow text added by  Nicole */
-
-  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  /* Rainbow text added for the Title by Nicole */
+  background: linear-gradient(90deg,  
+      #ffd6e0,
+      #f3a381,
+      #f7f5c7,
+      #d0f0c0,
+      #aee1ff
+    );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  /* Thin black border around letters */
+  -webkit-text-stroke: 1px black; /* For WebKit-based browsers */
 }
+
 
 button {
   border-radius: 8px;
@@ -54,7 +67,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #0b14b7;
 }
 button:focus,
 button:focus-visible {
@@ -67,10 +80,15 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #dfff74;
   }
-  button {
-    background-color: #f9f9f9;
+  /* button {
+    background-color: #18e0bf;
+  } */
+
+  .addButton {
+    background-color: #18e0bf;
+    border: 2px solid yellow;;
   }
 }
 
