@@ -30,7 +30,7 @@ function AddTodoForm({onAddTodo}) {
                 handleTitleChange={handleTitleChange}>
                 Title
             </InputWithLabel>
-            <button type="submit">Add</button>
+            <button className="addButton" type="submit">Add</button>
         </form>
     );
 }
