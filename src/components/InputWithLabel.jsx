@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const InputWithLabel = ({ todoTitle, handleTitleChange, children }) => {
    
@@ -6,7 +7,7 @@ const InputWithLabel = ({ todoTitle, handleTitleChange, children }) => {
 
     useEffect(() => {
         inputRef.current.focus();
-    });
+    }, []);
 
     return (
         <>
@@ -20,6 +21,12 @@ const InputWithLabel = ({ todoTitle, handleTitleChange, children }) => {
             />
         </>
     );
+};
+
+InputWithLabel.propTypes = {
+    todoTitle: PropTypes.string.isRequired,  
+    handleTitleChange: PropTypes.func.isRequired,  
+    children: PropTypes.node.isRequired  
 };
 
 export default InputWithLabel;
