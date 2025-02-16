@@ -1,5 +1,5 @@
 body {
-    background-image: url('/public/images/prettyBkgnd.jpg'); /* Replace with your image path */
+    background-image: url('/images/prettyBkgnd.jpg'); /* Replace with your image path */
     background-size: contain; 
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents tiling */
