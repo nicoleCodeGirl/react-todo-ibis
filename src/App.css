@@ -40,3 +40,28 @@
 .read-the-docs {
   color: #888;
 }
+
+/* This is for the button that changes the ascending and descending order */
+.toggleButton {
+  background-color: pink;
+  margin-bottom: 5%;
+  border: 2px solid transparent; /* Default border */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover and active effects */
+}
+
+.toggleButton:hover {
+  background: linear-gradient(to right, #ff99cc, #ff66ff); /* Gradient pink */
+  border: 2px solid purple; /* Purple border */
+  transform: translateY(2px); /* Pressed down effect on hover */
+}
+
+.toggleButton:active {
+  background: linear-gradient(to right, #ff66ff, #ff99cc); /* Reverse gradient for click effect */
+  border: 2px solid darkviolet; /* Darker purple border */
+  transform: translateY(4px); /* Pressed further down on click */
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2); /* Inner shadow for "pressed" look */
+}
+
