@@ -24,11 +24,18 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
+  background-image: url('/images/catBkgrnd.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
 }
+
 .todoBox{
   background: rgb(238, 6, 172);
   padding: 10px;
@@ -105,6 +112,21 @@ button:focus-visible {
   .addButton:active {
     transform: translateY(0);
     box-shadow: none;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-size: contain;
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 0 10px;
   }
 }
 
