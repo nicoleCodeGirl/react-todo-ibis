@@ -1,12 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import TodoContainer from './components/TodoContainer.jsx'
-
-const tableName = import.meta.env.VITE_TABLE_NAME;
+import App from './App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <TodoContainer tableName={tableName} />
+    <App />
   </StrictMode>,
 )

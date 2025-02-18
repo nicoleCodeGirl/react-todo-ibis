@@ -12,10 +12,13 @@ function AddTodoForm({onAddTodo}) {
     function handleAddTodo(event) {
         event.preventDefault();
         
-        if (todoTitle.trim()) {  // Only add if title is not empty
+        const audio = new Audio('/addItemSound.mp3');
+        audio.play();
+
+        if (todoTitle.trim()) {  
             onAddTodo({ 
                 title: todoTitle,
-                id: Date.now() // Temporary ID until Airtable provides the real one
+                id: Date.now() 
             });
             setTodoTitle('');
         }

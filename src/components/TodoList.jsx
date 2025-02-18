@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import TodoListItem from "./TodoListItem";
-import style from "./TodoList.module.css"; // Importing as "style"
+import style from "./TodoList.module.css";
 
 function TodoList({ todoList, onRemoveTodo }) {
   return (
