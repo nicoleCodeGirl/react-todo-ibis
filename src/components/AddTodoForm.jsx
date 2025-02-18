@@ -2,27 +2,23 @@ import { useState } from 'react';
 import InputWithLabel from './InputWithLabel';
 import PropTypes from "prop-types";
 
-
 function AddTodoForm({onAddTodo}) {
-
     const [todoTitle, setTodoTitle] = useState('');
 
     function handleTitleChange(event) {
-        const newTodoTitle = event.target.value; // Retrieve input value
-        setTodoTitle(newTodoTitle); // Update state
+        setTodoTitle(event.target.value);
     }
 
     function handleAddTodo(event) {
         event.preventDefault();
-
-        console.log("this is todoTitle:", todoTitle);
-
-        onAddTodo({ 
-            title: todoTitle, // Set title to todoTitle
-            id: Date.now() // Generate a unique identifier using Date.now()
-        });
-
-        setTodoTitle(""); // Reset todoTitle state to an empty string
+        
+        if (todoTitle.trim()) {  // Only add if title is not empty
+            onAddTodo({ 
+                title: todoTitle,
+                id: Date.now() // Temporary ID until Airtable provides the real one
+            });
+            setTodoTitle('');
+        }
     }
 
     return (
@@ -38,7 +34,7 @@ function AddTodoForm({onAddTodo}) {
 }
 
 AddTodoForm.propTypes = {
-    onAddTodo: PropTypes.func
+    onAddTodo: PropTypes.func.isRequired
 };
 
 export default AddTodoForm;

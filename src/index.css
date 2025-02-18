@@ -82,13 +82,29 @@ button:focus-visible {
   a:hover {
     color: #dfff74;
   }
-  /* button {
-    background-color: #18e0bf;
-  } */
+ 
 
   .addButton {
-    background-color: #18e0bf;
-    border: 2px solid yellow;;
+    background-color: #8a2be2;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+
+  .addButton:hover {
+    background-color: #7325c4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .addButton:active {
+    transform: translateY(0);
+    box-shadow: none;
   }
 }
 
