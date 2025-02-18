@@ -1,0 +1,27 @@
+.label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8a2be2;  /* Purple */
+    text-shadow: 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff; /* White outline effect */
+    margin-right: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.input {
+    padding: 8px 12px;
+    border: 2px solid #8a2be2;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    margin-right: 15px; /* Space between input and button */
+}
+
+.input:focus {
+    border-color: #7325c4;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
